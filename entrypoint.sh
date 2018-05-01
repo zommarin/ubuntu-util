@@ -10,8 +10,15 @@ function usage() {
     exit 0
 }
 
+function doSleep() {
+    echo "Entering sleep mode"
+    while true ; do
+        sleep 3600
+    done
+}
+
 if [ "$1" = "" ] ; then
-    usage
+    doSleep
 fi
 
 case $1 in
@@ -19,9 +26,7 @@ case $1 in
         usage
         ;;
     "--sleep")
-        while true ; do
-            sleep 3600
-        done
+        doSleep
         ;;
     *)
         exec "$@"
