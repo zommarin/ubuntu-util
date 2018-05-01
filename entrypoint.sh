@@ -1,7 +1,29 @@
 #!/usr/bin/env bash
 
-if [ "$1" = "--help" ] ; then
-    echo "Help is on the way"
+function usage() {
+    echo "Usage:"
+    echo "    --help"
+    echo "        Display this help"
+    echo "    --sleep"
+    echo "        Just sleep (useful for deamon mode)"
+    echo "Otherwise execute the commands given"
     exit 0
+}
+
+if [ "$1" = "" ] ; then
+    usage
 fi
-exec "$@"
+
+case $1 in
+    "--help")
+        usage
+        ;;
+    "--sleep")
+        while true ; do
+            sleep 3600
+        done
+        ;;
+    *)
+        exec "$@"
+        ;;
+esac

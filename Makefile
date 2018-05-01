@@ -17,4 +17,4 @@ push: build
 
 .PHONY: run
 run: build
-	docker run -it $(DOCKER_IMAGE) bash
+	docker run -it $(DOCKER_IMAGE)
