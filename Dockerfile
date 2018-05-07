@@ -6,13 +6,9 @@ FROM ubuntu:18.04
 
 MAINTAINER Anders Zommarin <anders@zommarin.se>
 
-RUN apt-get update && \
-    apt-get install -y \
-        net-tools iputils-ping iproute2 ethtool dnsutils \
-        htop \
-        emacs-nox \
-        less \
-        zsh
+COPY install-tools.sh /install-tools.sh
+
+RUN /install-tools.sh
 
 COPY entrypoint.sh /bin/entrypoint.sh
 
