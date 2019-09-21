@@ -33,3 +33,6 @@ apt-get install -y kubectl
 
 # Install node.js LTS
 apt-get install -y nodejs npm
+
+# Node tools
+npm i -g elasticdump
