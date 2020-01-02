@@ -1,0 +1,6 @@
+name: 'Ubuntu Utilities'
+author: 'Anders Zommarin <anders@zommarin.se>'
+description: 'Nice to have utilities'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
